@@ -124,8 +124,17 @@ export EDITOR=/usr/bin/nvim
 function ls() {
  if command -v /usr/bin/lsd &> /dev/null
  then
-				/usr/bin/lsd "$@"
+	/usr/bin/lsd "$@"
  else
-				/bin/ls "$@"
+	/bin/ls "$@"
+ fi
+}
+
+function tree() {
+ if command -v /usr/bin/lsd &> /dev/null
+ then
+	/usr/bin/lsd --tree "$@"
+ else
+	/bin/tree "$@"
  fi
 }
