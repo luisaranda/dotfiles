@@ -120,3 +120,12 @@ fi
 export PATH=$HOME/.local/bin:$PATH
 
 export EDITOR=/usr/bin/nvim
+
+function ls() {
+ if command -v /usr/bin/lsd &> /dev/null
+ then
+				/usr/bin/lsd "$@"
+ else
+				/bin/ls "$@"
+ fi
+}
